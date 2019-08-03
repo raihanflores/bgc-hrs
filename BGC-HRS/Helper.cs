@@ -4,7 +4,7 @@ using System.Windows.Forms;
 //Helper.ClearFormControls(this);
 namespace BGC_HRS
 {
-    class Helper
+    public class Helper
     {
         public static void ClearFormControls(Form form)
         {
@@ -29,6 +29,11 @@ namespace BGC_HRS
                 {
                     DateTimePicker dtp = (DateTimePicker)control;
                     dtp.Value = DateTime.Now;
+                }
+                else if (control is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)control;
+                    cb.SelectedIndex = 0;
                 }
             }
         }

@@ -30,7 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDetailView = new System.Windows.Forms.TabPage();
+            this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.tablistView = new System.Windows.Forms.TabPage();
+            this.lblId = new System.Windows.Forms.Label();
             this.cbDegree = new System.Windows.Forms.ComboBox();
             this.cbAccommodation = new System.Windows.Forms.ComboBox();
             this.cbSiteName = new System.Windows.Forms.ComboBox();
@@ -50,7 +52,6 @@
             this.rbStatusExit = new System.Windows.Forms.RadioButton();
             this.rbStatusVacationLeave = new System.Windows.Forms.RadioButton();
             this.rbStatusActive = new System.Windows.Forms.RadioButton();
-            this.pbStatusIcon = new System.Windows.Forms.PictureBox();
             this.label68 = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
@@ -68,7 +69,7 @@
             this.label61 = new System.Windows.Forms.Label();
             this.txtStartingSalary = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblCurrentContract = new System.Windows.Forms.Label();
             this.dtpDriverLicenseExpiry = new System.Windows.Forms.DateTimePicker();
             this.label58 = new System.Windows.Forms.Label();
             this.dtpDriverLicenseIssued = new System.Windows.Forms.DateTimePicker();
@@ -84,20 +85,20 @@
             this.label35 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblAllowancesCount = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddAllowance = new System.Windows.Forms.Button();
             this.dgAllowances = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblSalaryIncreasesCount = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgSalaryInceases = new System.Windows.Forms.DataGridView();
+            this.btnAddSalaryIncreases = new System.Windows.Forms.Button();
+            this.dgvSalaryInceases = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblVacationCount = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dgVacation = new System.Windows.Forms.DataGridView();
+            this.btnAddVacation = new System.Windows.Forms.Button();
+            this.dgvVacation = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -128,7 +129,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtRPNumber = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblYearsInBoom = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -141,11 +142,11 @@
             this.cbJobTitleAsJO = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
+            this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbProjectManager = new System.Windows.Forms.ComboBox();
-            this.txtEmployeeName = new System.Windows.Forms.TextBox();
+            this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblEmployeeCode = new System.Windows.Forms.Label();
@@ -164,7 +165,6 @@
             this.rbOffice = new System.Windows.Forms.RadioButton();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -172,17 +172,20 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
+            this.tabDetailView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.tablistView.SuspendLayout();
             this.gbStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStatusIcon)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAllowances)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgSalaryInceases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaryInceases)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVacation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVacation)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
@@ -206,6 +209,7 @@
             // 
             // tabDetailView
             // 
+            this.tabDetailView.Controls.Add(this.dgvEmployeeList);
             this.tabDetailView.Location = new System.Drawing.Point(4, 33);
             this.tabDetailView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDetailView.Name = "tabDetailView";
@@ -215,8 +219,21 @@
             this.tabDetailView.Text = "List View";
             this.tabDetailView.UseVisualStyleBackColor = true;
             // 
+            // dgvEmployeeList
+            // 
+            this.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeeList.Location = new System.Drawing.Point(6, 5);
+            this.dgvEmployeeList.Name = "dgvEmployeeList";
+            this.dgvEmployeeList.ReadOnly = true;
+            this.dgvEmployeeList.RowHeadersWidth = 51;
+            this.dgvEmployeeList.RowTemplate.Height = 24;
+            this.dgvEmployeeList.Size = new System.Drawing.Size(1877, 960);
+            this.dgvEmployeeList.TabIndex = 0;
+            this.dgvEmployeeList.DoubleClick += new System.EventHandler(this.DgvEmployeeList_DoubleClick);
+            // 
             // tablistView
             // 
+            this.tablistView.Controls.Add(this.lblId);
             this.tablistView.Controls.Add(this.cbDegree);
             this.tablistView.Controls.Add(this.cbAccommodation);
             this.tablistView.Controls.Add(this.cbSiteName);
@@ -230,7 +247,6 @@
             this.tablistView.Controls.Add(this.label37);
             this.tablistView.Controls.Add(this.dtpDateOfSeparation);
             this.tablistView.Controls.Add(this.gbStatus);
-            this.tablistView.Controls.Add(this.pbStatusIcon);
             this.tablistView.Controls.Add(this.label68);
             this.tablistView.Controls.Add(this.txtRemarks);
             this.tablistView.Controls.Add(this.label67);
@@ -248,7 +264,7 @@
             this.tablistView.Controls.Add(this.label61);
             this.tablistView.Controls.Add(this.txtStartingSalary);
             this.tablistView.Controls.Add(this.label60);
-            this.tablistView.Controls.Add(this.label13);
+            this.tablistView.Controls.Add(this.lblCurrentContract);
             this.tablistView.Controls.Add(this.dtpDriverLicenseExpiry);
             this.tablistView.Controls.Add(this.label58);
             this.tablistView.Controls.Add(this.dtpDriverLicenseIssued);
@@ -288,7 +304,7 @@
             this.tablistView.Controls.Add(this.label16);
             this.tablistView.Controls.Add(this.txtRPNumber);
             this.tablistView.Controls.Add(this.label15);
-            this.tablistView.Controls.Add(this.label12);
+            this.tablistView.Controls.Add(this.lblYearsInBoom);
             this.tablistView.Controls.Add(this.label11);
             this.tablistView.Controls.Add(this.label10);
             this.tablistView.Controls.Add(this.label9);
@@ -301,11 +317,11 @@
             this.tablistView.Controls.Add(this.cbJobTitleAsJO);
             this.tablistView.Controls.Add(this.label7);
             this.tablistView.Controls.Add(this.label6);
-            this.tablistView.Controls.Add(this.txtEmployeeNumber);
+            this.tablistView.Controls.Add(this.txtEmployeeName);
             this.tablistView.Controls.Add(this.label5);
             this.tablistView.Controls.Add(this.label3);
             this.tablistView.Controls.Add(this.cbProjectManager);
-            this.tablistView.Controls.Add(this.txtEmployeeName);
+            this.tablistView.Controls.Add(this.txtEmployeeNumber);
             this.tablistView.Controls.Add(this.label1);
             this.tablistView.Controls.Add(this.lblEmployeeName);
             this.tablistView.Controls.Add(this.lblEmployeeCode);
@@ -325,8 +341,19 @@
             this.tablistView.Text = "Detail View";
             this.tablistView.UseVisualStyleBackColor = true;
             // 
+            // lblId
+            // 
+            this.lblId.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(830, 39);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(149, 20);
+            this.lblId.TabIndex = 164;
+            this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblId.Visible = false;
+            // 
             // cbDegree
             // 
+            this.cbDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDegree.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDegree.FormattingEnabled = true;
             this.cbDegree.Location = new System.Drawing.Point(585, 342);
@@ -337,6 +364,7 @@
             // 
             // cbAccommodation
             // 
+            this.cbAccommodation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAccommodation.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbAccommodation.FormattingEnabled = true;
             this.cbAccommodation.Location = new System.Drawing.Point(585, 303);
@@ -347,6 +375,7 @@
             // 
             // cbSiteName
             // 
+            this.cbSiteName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSiteName.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSiteName.FormattingEnabled = true;
             this.cbSiteName.Location = new System.Drawing.Point(585, 263);
@@ -540,15 +569,6 @@
             this.rbStatusActive.Text = "Active";
             this.rbStatusActive.UseVisualStyleBackColor = true;
             // 
-            // pbStatusIcon
-            // 
-            this.pbStatusIcon.Location = new System.Drawing.Point(1603, 268);
-            this.pbStatusIcon.Margin = new System.Windows.Forms.Padding(4);
-            this.pbStatusIcon.Name = "pbStatusIcon";
-            this.pbStatusIcon.Size = new System.Drawing.Size(80, 74);
-            this.pbStatusIcon.TabIndex = 142;
-            this.pbStatusIcon.TabStop = false;
-            // 
             // label68
             // 
             this.label68.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -622,6 +642,7 @@
             this.txtTotalSalary.Location = new System.Drawing.Point(1201, 768);
             this.txtTotalSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalSalary.Name = "txtTotalSalary";
+            this.txtTotalSalary.ReadOnly = true;
             this.txtTotalSalary.Size = new System.Drawing.Size(212, 27);
             this.txtTotalSalary.TabIndex = 133;
             // 
@@ -641,6 +662,7 @@
             this.txtTotalAllowances.Location = new System.Drawing.Point(1201, 732);
             this.txtTotalAllowances.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalAllowances.Name = "txtTotalAllowances";
+            this.txtTotalAllowances.ReadOnly = true;
             this.txtTotalAllowances.Size = new System.Drawing.Size(212, 27);
             this.txtTotalAllowances.TabIndex = 131;
             // 
@@ -660,6 +682,7 @@
             this.txtBasicSalary.Location = new System.Drawing.Point(1203, 697);
             this.txtBasicSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtBasicSalary.Name = "txtBasicSalary";
+            this.txtBasicSalary.ReadOnly = true;
             this.txtBasicSalary.Size = new System.Drawing.Size(212, 27);
             this.txtBasicSalary.TabIndex = 129;
             // 
@@ -679,6 +702,7 @@
             this.txtTotalSalaryIncrease.Location = new System.Drawing.Point(812, 732);
             this.txtTotalSalaryIncrease.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalSalaryIncrease.Name = "txtTotalSalaryIncrease";
+            this.txtTotalSalaryIncrease.ReadOnly = true;
             this.txtTotalSalaryIncrease.Size = new System.Drawing.Size(212, 27);
             this.txtTotalSalaryIncrease.TabIndex = 127;
             // 
@@ -698,6 +722,7 @@
             this.txtStartingSalary.Location = new System.Drawing.Point(812, 697);
             this.txtStartingSalary.Margin = new System.Windows.Forms.Padding(4);
             this.txtStartingSalary.Name = "txtStartingSalary";
+            this.txtStartingSalary.ReadOnly = true;
             this.txtStartingSalary.Size = new System.Drawing.Size(212, 27);
             this.txtStartingSalary.TabIndex = 125;
             // 
@@ -711,16 +736,15 @@
             this.label60.Text = "Starting Slary :";
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // lblCurrentContract
             // 
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label13.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1361, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(475, 28);
-            this.label13.TabIndex = 74;
-            this.label13.Text = "CURRENT CONTRACT : 6 YEARS, 8 MONTHS, 8 DAYS";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCurrentContract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblCurrentContract.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentContract.Location = new System.Drawing.Point(1361, 27);
+            this.lblCurrentContract.Name = "lblCurrentContract";
+            this.lblCurrentContract.Size = new System.Drawing.Size(475, 28);
+            this.lblCurrentContract.TabIndex = 74;
+            this.lblCurrentContract.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpDriverLicenseExpiry
             // 
@@ -797,12 +821,13 @@
             // 
             // cbBloodGroup
             // 
+            this.cbBloodGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBloodGroup.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBloodGroup.FormattingEnabled = true;
             this.cbBloodGroup.Location = new System.Drawing.Point(812, 476);
             this.cbBloodGroup.Margin = new System.Windows.Forms.Padding(4);
             this.cbBloodGroup.Name = "cbBloodGroup";
-            this.cbBloodGroup.Size = new System.Drawing.Size(45, 28);
+            this.cbBloodGroup.Size = new System.Drawing.Size(78, 28);
             this.cbBloodGroup.TabIndex = 115;
             // 
             // dtpHealthCardIssued
@@ -870,9 +895,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label28);
+            this.tabPage1.Controls.Add(this.lblAllowancesCount);
             this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.btnAddAllowance);
             this.tabPage1.Controls.Add(this.dgAllowances);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
@@ -883,15 +908,15 @@
             this.tabPage1.Text = "Allowances";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label28
+            // lblAllowancesCount
             // 
-            this.label28.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(580, 12);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(36, 23);
-            this.label28.TabIndex = 4;
-            this.label28.Text = "99";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAllowancesCount.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllowancesCount.Location = new System.Drawing.Point(580, 12);
+            this.lblAllowancesCount.Name = "lblAllowancesCount";
+            this.lblAllowancesCount.Size = new System.Drawing.Size(36, 23);
+            this.lblAllowancesCount.TabIndex = 4;
+            this.lblAllowancesCount.Text = "0";
+            this.lblAllowancesCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
@@ -903,16 +928,17 @@
             this.label27.Text = "Total Records : ";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // btnAddAllowance
             // 
-            this.button1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(7, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Allowances";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddAllowance.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAllowance.Location = new System.Drawing.Point(7, 7);
+            this.btnAddAllowance.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddAllowance.Name = "btnAddAllowance";
+            this.btnAddAllowance.Size = new System.Drawing.Size(155, 28);
+            this.btnAddAllowance.TabIndex = 1;
+            this.btnAddAllowance.Text = "Add Allowances";
+            this.btnAddAllowance.UseVisualStyleBackColor = true;
+            this.btnAddAllowance.Click += new System.EventHandler(this.BtnAddAllowance_Click);
             // 
             // dgAllowances
             // 
@@ -920,16 +946,18 @@
             this.dgAllowances.Location = new System.Drawing.Point(7, 43);
             this.dgAllowances.Margin = new System.Windows.Forms.Padding(4);
             this.dgAllowances.Name = "dgAllowances";
+            this.dgAllowances.ReadOnly = true;
             this.dgAllowances.RowHeadersWidth = 51;
-            this.dgAllowances.Size = new System.Drawing.Size(612, 433);
+            this.dgAllowances.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgAllowances.Size = new System.Drawing.Size(612, 385);
             this.dgAllowances.TabIndex = 0;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.lblSalaryIncreasesCount);
             this.tabPage2.Controls.Add(this.label30);
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.dgSalaryInceases);
+            this.tabPage2.Controls.Add(this.btnAddSalaryIncreases);
+            this.tabPage2.Controls.Add(this.dgvSalaryInceases);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -939,15 +967,15 @@
             this.tabPage2.Text = "Salary Increases";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label29
+            // lblSalaryIncreasesCount
             // 
-            this.label29.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(580, 12);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(36, 23);
-            this.label29.TabIndex = 8;
-            this.label29.Text = "99";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSalaryIncreasesCount.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalaryIncreasesCount.Location = new System.Drawing.Point(580, 12);
+            this.lblSalaryIncreasesCount.Name = "lblSalaryIncreasesCount";
+            this.lblSalaryIncreasesCount.Size = new System.Drawing.Size(36, 23);
+            this.lblSalaryIncreasesCount.TabIndex = 8;
+            this.lblSalaryIncreasesCount.Text = "0";
+            this.lblSalaryIncreasesCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30
             // 
@@ -959,33 +987,35 @@
             this.label30.Text = "Total Records : ";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button2
+            // btnAddSalaryIncreases
             // 
-            this.button2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(8, 7);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 28);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Add Allowances";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddSalaryIncreases.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSalaryIncreases.Location = new System.Drawing.Point(8, 7);
+            this.btnAddSalaryIncreases.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddSalaryIncreases.Name = "btnAddSalaryIncreases";
+            this.btnAddSalaryIncreases.Size = new System.Drawing.Size(155, 28);
+            this.btnAddSalaryIncreases.TabIndex = 6;
+            this.btnAddSalaryIncreases.Text = "Add Salary Increase";
+            this.btnAddSalaryIncreases.UseVisualStyleBackColor = true;
+            this.btnAddSalaryIncreases.Click += new System.EventHandler(this.BtnAddSalaryIncreases_Click);
             // 
-            // dgSalaryInceases
+            // dgvSalaryInceases
             // 
-            this.dgSalaryInceases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSalaryInceases.Location = new System.Drawing.Point(8, 43);
-            this.dgSalaryInceases.Margin = new System.Windows.Forms.Padding(4);
-            this.dgSalaryInceases.Name = "dgSalaryInceases";
-            this.dgSalaryInceases.RowHeadersWidth = 51;
-            this.dgSalaryInceases.Size = new System.Drawing.Size(612, 433);
-            this.dgSalaryInceases.TabIndex = 5;
+            this.dgvSalaryInceases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalaryInceases.Location = new System.Drawing.Point(8, 43);
+            this.dgvSalaryInceases.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvSalaryInceases.Name = "dgvSalaryInceases";
+            this.dgvSalaryInceases.ReadOnly = true;
+            this.dgvSalaryInceases.RowHeadersWidth = 51;
+            this.dgvSalaryInceases.Size = new System.Drawing.Size(612, 385);
+            this.dgvSalaryInceases.TabIndex = 5;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.Controls.Add(this.lblVacationCount);
             this.tabPage3.Controls.Add(this.label32);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.dgVacation);
+            this.tabPage3.Controls.Add(this.btnAddVacation);
+            this.tabPage3.Controls.Add(this.dgvVacation);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
@@ -994,15 +1024,15 @@
             this.tabPage3.Text = "Vacation";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label31
+            // lblVacationCount
             // 
-            this.label31.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(580, 12);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(36, 23);
-            this.label31.TabIndex = 8;
-            this.label31.Text = "99";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVacationCount.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVacationCount.Location = new System.Drawing.Point(580, 12);
+            this.lblVacationCount.Name = "lblVacationCount";
+            this.lblVacationCount.Size = new System.Drawing.Size(36, 23);
+            this.lblVacationCount.TabIndex = 8;
+            this.lblVacationCount.Text = "0";
+            this.lblVacationCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
             // 
@@ -1014,26 +1044,27 @@
             this.label32.Text = "Total Records : ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button3
+            // btnAddVacation
             // 
-            this.button3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(8, 7);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 28);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Add Allowances";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddVacation.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddVacation.Location = new System.Drawing.Point(8, 7);
+            this.btnAddVacation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddVacation.Name = "btnAddVacation";
+            this.btnAddVacation.Size = new System.Drawing.Size(155, 28);
+            this.btnAddVacation.TabIndex = 6;
+            this.btnAddVacation.Text = "Add Vacation";
+            this.btnAddVacation.UseVisualStyleBackColor = true;
             // 
-            // dgVacation
+            // dgvVacation
             // 
-            this.dgVacation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVacation.Location = new System.Drawing.Point(8, 43);
-            this.dgVacation.Margin = new System.Windows.Forms.Padding(4);
-            this.dgVacation.Name = "dgVacation";
-            this.dgVacation.RowHeadersWidth = 51;
-            this.dgVacation.Size = new System.Drawing.Size(612, 433);
-            this.dgVacation.TabIndex = 5;
+            this.dgvVacation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVacation.Location = new System.Drawing.Point(8, 43);
+            this.dgvVacation.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVacation.Name = "dgvVacation";
+            this.dgvVacation.ReadOnly = true;
+            this.dgvVacation.RowHeadersWidth = 51;
+            this.dgvVacation.Size = new System.Drawing.Size(612, 385);
+            this.dgvVacation.TabIndex = 5;
             // 
             // tabPage4
             // 
@@ -1101,13 +1132,17 @@
             // 
             // pbProfilePicture
             // 
-            this.pbProfilePicture.Location = new System.Drawing.Point(1480, 255);
+            this.pbProfilePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbProfilePicture.Location = new System.Drawing.Point(1523, 255);
             this.pbProfilePicture.Margin = new System.Windows.Forms.Padding(4);
             this.pbProfilePicture.Name = "pbProfilePicture";
-            this.pbProfilePicture.Size = new System.Drawing.Size(115, 114);
+            this.pbProfilePicture.Size = new System.Drawing.Size(127, 114);
             this.pbProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProfilePicture.TabIndex = 107;
             this.pbProfilePicture.TabStop = false;
+            this.pbProfilePicture.Click += new System.EventHandler(this.PbProfilePicture_Click);
+            this.pbProfilePicture.MouseEnter += new System.EventHandler(this.PbProfilePicture_MouseEnter);
+            this.pbProfilePicture.MouseLeave += new System.EventHandler(this.PbProfilePicture_MouseLeave);
             // 
             // label25
             // 
@@ -1152,6 +1187,7 @@
             // 
             // cbNationality
             // 
+            this.cbNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNationality.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNationality.FormattingEnabled = true;
             this.cbNationality.Location = new System.Drawing.Point(1172, 338);
@@ -1172,12 +1208,13 @@
             // 
             // cbDaysOfLeave
             // 
+            this.cbDaysOfLeave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDaysOfLeave.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDaysOfLeave.FormattingEnabled = true;
             this.cbDaysOfLeave.Location = new System.Drawing.Point(1172, 298);
             this.cbDaysOfLeave.Margin = new System.Windows.Forms.Padding(4);
             this.cbDaysOfLeave.Name = "cbDaysOfLeave";
-            this.cbDaysOfLeave.Size = new System.Drawing.Size(151, 28);
+            this.cbDaysOfLeave.Size = new System.Drawing.Size(83, 28);
             this.cbDaysOfLeave.TabIndex = 93;
             // 
             // label22
@@ -1192,6 +1229,7 @@
             // 
             // cbTicket
             // 
+            this.cbTicket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTicket.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTicket.FormattingEnabled = true;
             this.cbTicket.Location = new System.Drawing.Point(1172, 255);
@@ -1343,17 +1381,16 @@
             this.label15.Text = "RP No. :";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
+            // lblYearsInBoom
             // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label12.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(1363, 4);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(473, 28);
-            this.label12.TabIndex = 73;
-            this.label12.Text = "YEARS IN BOOM : 6 YEARS, 8 MONTHS, 6 DAYS";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblYearsInBoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblYearsInBoom.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYearsInBoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblYearsInBoom.Location = new System.Drawing.Point(1363, 4);
+            this.lblYearsInBoom.Name = "lblYearsInBoom";
+            this.lblYearsInBoom.Size = new System.Drawing.Size(473, 28);
+            this.lblYearsInBoom.TabIndex = 73;
+            this.lblYearsInBoom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -1397,6 +1434,7 @@
             // 
             // cbRecruitedBy
             // 
+            this.cbRecruitedBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRecruitedBy.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRecruitedBy.FormattingEnabled = true;
             this.cbRecruitedBy.Location = new System.Drawing.Point(168, 341);
@@ -1416,6 +1454,7 @@
             // 
             // cbSponsorship
             // 
+            this.cbSponsorship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSponsorship.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSponsorship.FormattingEnabled = true;
             this.cbSponsorship.Location = new System.Drawing.Point(167, 265);
@@ -1437,6 +1476,7 @@
             // 
             // cbActualJobTitle
             // 
+            this.cbActualJobTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbActualJobTitle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbActualJobTitle.FormattingEnabled = true;
             this.cbActualJobTitle.Location = new System.Drawing.Point(168, 185);
@@ -1447,6 +1487,7 @@
             // 
             // cbJobTitleAsJO
             // 
+            this.cbJobTitleAsJO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJobTitleAsJO.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbJobTitleAsJO.FormattingEnabled = true;
             this.cbJobTitleAsJO.Location = new System.Drawing.Point(168, 144);
@@ -1475,14 +1516,14 @@
             this.label6.Text = "Job Title As JO :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtEmployeeNumber
+            // txtEmployeeName
             // 
-            this.txtEmployeeNumber.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeNumber.Location = new System.Drawing.Point(168, 105);
-            this.txtEmployeeNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
-            this.txtEmployeeNumber.Size = new System.Drawing.Size(811, 27);
-            this.txtEmployeeNumber.TabIndex = 59;
+            this.txtEmployeeName.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeName.Location = new System.Drawing.Point(168, 105);
+            this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.Size = new System.Drawing.Size(811, 27);
+            this.txtEmployeeName.TabIndex = 59;
             // 
             // label5
             // 
@@ -1506,6 +1547,7 @@
             // 
             // cbProjectManager
             // 
+            this.cbProjectManager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProjectManager.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProjectManager.FormattingEnabled = true;
             this.cbProjectManager.Location = new System.Drawing.Point(439, 66);
@@ -1514,14 +1556,14 @@
             this.cbProjectManager.Size = new System.Drawing.Size(540, 28);
             this.cbProjectManager.TabIndex = 56;
             // 
-            // txtEmployeeName
+            // txtEmployeeNumber
             // 
-            this.txtEmployeeName.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(168, 69);
-            this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(132, 27);
-            this.txtEmployeeName.TabIndex = 55;
+            this.txtEmployeeNumber.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeNumber.Location = new System.Drawing.Point(168, 69);
+            this.txtEmployeeNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
+            this.txtEmployeeNumber.Size = new System.Drawing.Size(132, 27);
+            this.txtEmployeeNumber.TabIndex = 55;
             // 
             // label1
             // 
@@ -1538,9 +1580,8 @@
             this.lblEmployeeName.ForeColor = System.Drawing.Color.Maroon;
             this.lblEmployeeName.Location = new System.Drawing.Point(21, 4);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(247, 25);
+            this.lblEmployeeName.Size = new System.Drawing.Size(418, 25);
             this.lblEmployeeName.TabIndex = 28;
-            this.lblEmployeeName.Text = "Mahmoud El Naddaf";
             // 
             // lblEmployeeCode
             // 
@@ -1722,28 +1763,23 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
+            this.newToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(123, 26);
-            this.exitToolStripMenuItem.Text = "Save";
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(123, 26);
+            this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -1761,30 +1797,51 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
-            this.createToolStripMenuItem.Text = "New";
+            this.createToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.updateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // findToolStripMenuItem
             // 
             this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.findToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.findToolStripMenuItem.Text = "Find";
             this.findToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeToolStripMenuItem});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.EmployeeToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1800,20 +1857,22 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BGC-HRIS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabDetailView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             this.tablistView.ResumeLayout(false);
             this.tablistView.PerformLayout();
             this.gbStatus.ResumeLayout(false);
             this.gbStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStatusIcon)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgAllowances)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgSalaryInceases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalaryInceases)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgVacation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVacation)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
@@ -1851,14 +1910,14 @@
         private System.Windows.Forms.ComboBox cbJobTitleAsJO;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEmployeeNumber;
+        private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbProjectManager;
-        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.TextBox txtEmployeeNumber;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCurrentContract;
+        private System.Windows.Forms.Label lblYearsInBoom;
         private System.Windows.Forms.PictureBox pbProfilePicture;
         private System.Windows.Forms.DateTimePicker dtpDateOfSeparation;
         private System.Windows.Forms.Label label25;
@@ -1886,20 +1945,20 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblAllowancesCount;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddAllowance;
         private System.Windows.Forms.DataGridView dgAllowances;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblSalaryIncreasesCount;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dgSalaryInceases;
+        private System.Windows.Forms.Button btnAddSalaryIncreases;
+        private System.Windows.Forms.DataGridView dgvSalaryInceases;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblVacationCount;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dgVacation;
+        private System.Windows.Forms.Button btnAddVacation;
+        private System.Windows.Forms.DataGridView dgvVacation;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
@@ -1938,9 +1997,7 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pbStatusIcon;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
@@ -1975,6 +2032,10 @@
         private System.Windows.Forms.GroupBox gbGender;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.DataGridView dgvEmployeeList;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
     }
 }
 

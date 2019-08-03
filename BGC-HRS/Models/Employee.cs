@@ -9,20 +9,14 @@ namespace BGC_HRS.Models
 {
     public class Employee
     {
-        private string server = "localhost";
-        private string database = "bgc";
-        private string uid = "root";
-        private string password = "qwer1234";
         private MySqlConnection connection;
 
         public Employee()
         {
-            string connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
         }
         #region Class properties
-        public string id;
+        public int id;
         public string employee_code;
         public string employee_name;
         public string employee_type;
@@ -78,6 +72,9 @@ namespace BGC_HRS.Models
         public string remarks;
         public string picture;
         public string project_manager;
+        public string gender;
+        public string work_category;
+        public string cost_allocation;
         #endregion
 
         public string create()
@@ -88,12 +85,12 @@ namespace BGC_HRS.Models
                 "leave_ticket_entitlement, leave_ticket_family, leave_days_per_year, leave_used_ticket, leave_two_way_ticket, leave_credits, vacation_ticket, vacation_leave_days, " +
                 "driving_license_issue_date, driving_license_expiry_date, health_card_number, health_card_issue_date, health_card_expiry_date, bank_name, card_number, recruited_by, " +
                 "accommodation, certificate, cv, d_paycard_number, end_date, `status`, project_manager, picture, contact_number, remarks, starting_salary, age) VALUES(" +
-                "'"+ employee_code +"', '"+ employee_name + "', '" + employee_type + "', '" + allocation_site + "', '" + allocation_department + "', '" + location_site + "', '" + location_division +"', " +
-                "'" + location_sub_division + "', '" + job_title_per_offer + "', '" + actual_job_title + "', '" + grade + "', '" + degree + "', '" + nationality + "', '" + sponsorship + "', '" + dob + "', '" + passport_number + "', '" + passport_issue_date + "', '" + passport_expiry_date +"', " +
-                "'" + residence_number + "', '" + residence_expiry_date + "', '" + residence_blood_group + "', '" + doha_entry + "', '" + joining_date + "', '" + increment_month +"', "+ increment_amount + ", " + basic_salary + ", " +
-                "'" + leave_ticket_entitlement + "', '" + leave_ticket_family + "', " + leave_days_per_year + ", '" + leave_used_ticket + "', '" + leave_two_way_ticket + "', " + leave_credits + ", '" + vacation_ticket + "', " + vacation_leave_days +", " +
-                "'" + driving_license_issue_date + "', '" + driving_license_expiry_date + "', '" + health_card_number + "', '" + health_card_issue_date + "', '" + health_card_expiry_date + "', '" + bank_name + "', '" + card_number + "', '" + recruited_by +"', " +
-                "'" + accommodation + "', '" + certificate + "', '" + cv + "', '" + d_paycard_number + "', '" + end_date + "', '" + status + "', '" + project_manager +"', '" + picture +"', '" + contact_number +"', '" + remarks +"', " + starting_salary +", " + age +")";
+                "'" + employee_code + "', '" + employee_name + "', '" + employee_type + "', '" + allocation_site + "', '" + allocation_department + "', '" + location_site + "', '" + location_division + "', " +
+                "'" + location_sub_division + "', '" + job_title_per_offer + "', '" + actual_job_title + "', '" + grade + "', '" + degree + "', '" + nationality + "', '" + sponsorship + "', '" + dob + "', '" + passport_number + "', '" + passport_issue_date + "', '" + passport_expiry_date + "', " +
+                "'" + residence_number + "', '" + residence_expiry_date + "', '" + residence_blood_group + "', '" + doha_entry + "', '" + joining_date + "', '" + increment_month + "', " + increment_amount + ", " + basic_salary + ", " +
+                "'" + leave_ticket_entitlement + "', '" + leave_ticket_family + "', " + leave_days_per_year + ", '" + leave_used_ticket + "', '" + leave_two_way_ticket + "', " + leave_credits + ", '" + vacation_ticket + "', " + vacation_leave_days + ", " +
+                "'" + driving_license_issue_date + "', '" + driving_license_expiry_date + "', '" + health_card_number + "', '" + health_card_issue_date + "', '" + health_card_expiry_date + "', '" + bank_name + "', '" + card_number + "', '" + recruited_by + "', " +
+                "'" + accommodation + "', '" + certificate + "', '" + cv + "', '" + d_paycard_number + "', '" + end_date + "', '" + status + "', '" + project_manager + "', '" + picture + "', '" + contact_number + "', '" + remarks + "', " + starting_salary + ", " + age + ")";
 
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = SQLSTR;
@@ -101,17 +98,82 @@ namespace BGC_HRS.Models
             command.ExecuteNonQuery();
             connection.Close();
 
-            return "Created";
+            return "Record created for " + employee_name + " successfully!";
         }
 
         public string update()
         {
-            return "Updated";
+            string SQLSTR = "UPDATE employee SET " +
+                            "employee_code = '" + employee_code + "'," +
+                            "employee_name = '" + employee_name + "'," +
+                            "employee_type = '" + employee_type + "'," +
+                            "allocation_site = '" + allocation_site + "'," +
+                            "allocation_department = '" + allocation_department + "'," +
+                            "location_site = '" + location_site + "'," +
+                            "location_division = '" + location_division + "'," +
+                            "location_sub_division = '" + location_sub_division + "'," +
+                            "job_title_per_offer = '" + job_title_per_offer + "'," +
+                            "actual_job_title = '" + actual_job_title + "'," +
+                            "grade = '" + grade + "'," +
+                            "degree = '" + degree + "'," +
+                            "nationality = '" + nationality + "'," +
+                            "sponsorship = '" + sponsorship + "'," +
+                            "dob = '" + dob + "'," +
+                            "passport_number = '" + passport_number + "'," +
+                            "passport_issue_date = '" + passport_issue_date + "'," +
+                            "passport_expiry_date = '" + passport_expiry_date + "'," +
+                            "residence_number = '" + residence_number + "'," +
+                            "residence_expiry_date = '" + residence_expiry_date + "'," +
+                            "residence_blood_group = '" + residence_blood_group + "'," +
+                            "doha_entry = '" + doha_entry + "'," +
+                            "joining_date = '" + joining_date + "'," +
+                            "increment_month = '" + increment_month + "'," +
+                            "increment_amount = " + increment_amount + "," +
+                            "basic_salary = " + basic_salary + "," +
+                            "leave_ticket_entitlement = '" + leave_ticket_entitlement + "'," +
+                            "leave_ticket_family = '" + leave_ticket_family + "'," +
+                            "leave_days_per_year = " + leave_days_per_year + "," +
+                            "leave_used_ticket = '" + leave_used_ticket + "'," +
+                            "leave_two_way_ticket = '" + leave_two_way_ticket + "'," +
+                            "leave_credits = 0," +
+                            "vacation_ticket = '" + vacation_ticket + "'," +
+                            "vacation_leave_days = " + vacation_leave_days + "," +
+                            "driving_license_issue_date = '" + driving_license_issue_date + "'," +
+                            "driving_license_expiry_date = '" + driving_license_expiry_date + "'," +
+                            "health_card_number = '" + health_card_number + "'," +
+                            "health_card_issue_date = '" + health_card_issue_date + "'," +
+                            "health_card_expiry_date = '" + health_card_expiry_date + "'," +
+                            "bank_name = '" + bank_name + "'," +
+                            "card_number = '" + card_number + "'," +
+                            "recruited_by = '" + recruited_by + "'," +
+                            "accommodation = '" + accommodation + "'," +
+                            "certificate = '" + certificate + "'," +
+                            "cv = ''," +
+                            "d_paycard_number = '" + d_paycard_number + "'," +
+                            "end_date = '" + end_date + "'," +
+                            "`status`= '" + status + "'," +
+                            "project_manager = '" + project_manager + "'," +
+                            "picture = '"+ picture +"'," +
+                            "contact_number = '" + contact_number + "'," +
+                            "remarks = '" + remarks + "'," +
+                            "gender = '" + employee_gender + "'," +
+                            "work_category = '" + work_category + "'," +
+                            "cost_allocation = '" + cost_allocation + "'," +
+                            "age = " + age + "" +
+                            " WHERE id = " + id + "";
+
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = SQLSTR;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            return "Record of " + employee_code + " updated successfully!";
         }
 
         public string fetch()
         {
-            return "fetched";
+            return "Fetched";
         }
 
         public string delete()
