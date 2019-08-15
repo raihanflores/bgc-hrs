@@ -165,6 +165,8 @@
             this.rbOffice = new System.Windows.Forms.RadioButton();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -172,8 +174,15 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabEmployeeWithoutID = new System.Windows.Forms.TabPage();
+            this.tabHealthCardMonitoring = new System.Windows.Forms.TabPage();
+            this.tabLeaveMonitoring = new System.Windows.Forms.TabPage();
+            this.tabPassportMonitoring = new System.Windows.Forms.TabPage();
+            this.dgvEmployeesWithoutID = new System.Windows.Forms.DataGridView();
+            this.dgvHealthCardMonitoring = new System.Windows.Forms.DataGridView();
+            this.dgvLeaveMonitoring = new System.Windows.Forms.DataGridView();
+            this.dgvPassportMonitoring = new System.Windows.Forms.DataGridView();
+            this.refreshListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabDetailView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
@@ -193,11 +202,23 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.tabEmployeeWithoutID.SuspendLayout();
+            this.tabHealthCardMonitoring.SuspendLayout();
+            this.tabLeaveMonitoring.SuspendLayout();
+            this.tabPassportMonitoring.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabDetailView);
+            this.tabControl1.Controls.Add(this.tabEmployeeWithoutID);
+            this.tabControl1.Controls.Add(this.tabHealthCardMonitoring);
+            this.tabControl1.Controls.Add(this.tabLeaveMonitoring);
+            this.tabControl1.Controls.Add(this.tabPassportMonitoring);
             this.tabControl1.Controls.Add(this.tablistView);
             this.tabControl1.Font = new System.Drawing.Font("Roboto", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(2, 30);
@@ -216,7 +237,7 @@
             this.tabDetailView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDetailView.Size = new System.Drawing.Size(1889, 973);
             this.tabDetailView.TabIndex = 1;
-            this.tabDetailView.Text = "List View";
+            this.tabDetailView.Text = "Employee List";
             this.tabDetailView.UseVisualStyleBackColor = true;
             // 
             // dgvEmployeeList
@@ -338,7 +359,7 @@
             this.tablistView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tablistView.Size = new System.Drawing.Size(1889, 973);
             this.tablistView.TabIndex = 0;
-            this.tablistView.Text = "Detail View";
+            this.tablistView.Text = "Employee Details";
             this.tablistView.UseVisualStyleBackColor = true;
             // 
             // lblId
@@ -1770,16 +1791,32 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeToolStripMenuItem});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.EmployeeToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 6);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -1789,7 +1826,8 @@
             this.createToolStripMenuItem,
             this.updateToolStripMenuItem,
             this.deleteToolStripMenuItem,
-            this.findToolStripMenuItem});
+            this.findToolStripMenuItem,
+            this.refreshListToolStripMenuItem});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.aboutToolStripMenuItem.Text = "Records";
@@ -1827,21 +1865,97 @@
             this.findToolStripMenuItem.Text = "Find";
             this.findToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
-            // newToolStripMenuItem
+            // tabEmployeeWithoutID
             // 
-            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeToolStripMenuItem});
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.newToolStripMenuItem.Text = "New";
+            this.tabEmployeeWithoutID.Controls.Add(this.dgvEmployeesWithoutID);
+            this.tabEmployeeWithoutID.Location = new System.Drawing.Point(4, 33);
+            this.tabEmployeeWithoutID.Name = "tabEmployeeWithoutID";
+            this.tabEmployeeWithoutID.Size = new System.Drawing.Size(1889, 973);
+            this.tabEmployeeWithoutID.TabIndex = 2;
+            this.tabEmployeeWithoutID.Text = "Employees w/o ID";
+            this.tabEmployeeWithoutID.UseVisualStyleBackColor = true;
             // 
-            // employeeToolStripMenuItem
+            // tabHealthCardMonitoring
             // 
-            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.employeeToolStripMenuItem.Text = "Employee";
-            this.employeeToolStripMenuItem.Click += new System.EventHandler(this.EmployeeToolStripMenuItem_Click);
+            this.tabHealthCardMonitoring.Controls.Add(this.dgvHealthCardMonitoring);
+            this.tabHealthCardMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabHealthCardMonitoring.Name = "tabHealthCardMonitoring";
+            this.tabHealthCardMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabHealthCardMonitoring.TabIndex = 3;
+            this.tabHealthCardMonitoring.Text = "Health Card Monitoring";
+            this.tabHealthCardMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // tabLeaveMonitoring
+            // 
+            this.tabLeaveMonitoring.Controls.Add(this.dgvLeaveMonitoring);
+            this.tabLeaveMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabLeaveMonitoring.Name = "tabLeaveMonitoring";
+            this.tabLeaveMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabLeaveMonitoring.TabIndex = 4;
+            this.tabLeaveMonitoring.Text = "Leave Monitoring";
+            this.tabLeaveMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // tabPassportMonitoring
+            // 
+            this.tabPassportMonitoring.Controls.Add(this.dgvPassportMonitoring);
+            this.tabPassportMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabPassportMonitoring.Name = "tabPassportMonitoring";
+            this.tabPassportMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabPassportMonitoring.TabIndex = 5;
+            this.tabPassportMonitoring.Text = "Passport Monitoring";
+            this.tabPassportMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmployeesWithoutID
+            // 
+            this.dgvEmployeesWithoutID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeesWithoutID.Location = new System.Drawing.Point(6, 6);
+            this.dgvEmployeesWithoutID.Name = "dgvEmployeesWithoutID";
+            this.dgvEmployeesWithoutID.ReadOnly = true;
+            this.dgvEmployeesWithoutID.RowHeadersWidth = 51;
+            this.dgvEmployeesWithoutID.RowTemplate.Height = 24;
+            this.dgvEmployeesWithoutID.Size = new System.Drawing.Size(1877, 960);
+            this.dgvEmployeesWithoutID.TabIndex = 1;
+            // 
+            // dgvHealthCardMonitoring
+            // 
+            this.dgvHealthCardMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHealthCardMonitoring.Location = new System.Drawing.Point(6, 6);
+            this.dgvHealthCardMonitoring.Name = "dgvHealthCardMonitoring";
+            this.dgvHealthCardMonitoring.ReadOnly = true;
+            this.dgvHealthCardMonitoring.RowHeadersWidth = 51;
+            this.dgvHealthCardMonitoring.RowTemplate.Height = 24;
+            this.dgvHealthCardMonitoring.Size = new System.Drawing.Size(1877, 960);
+            this.dgvHealthCardMonitoring.TabIndex = 1;
+            // 
+            // dgvLeaveMonitoring
+            // 
+            this.dgvLeaveMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLeaveMonitoring.Location = new System.Drawing.Point(6, 6);
+            this.dgvLeaveMonitoring.Name = "dgvLeaveMonitoring";
+            this.dgvLeaveMonitoring.ReadOnly = true;
+            this.dgvLeaveMonitoring.RowHeadersWidth = 51;
+            this.dgvLeaveMonitoring.RowTemplate.Height = 24;
+            this.dgvLeaveMonitoring.Size = new System.Drawing.Size(1877, 960);
+            this.dgvLeaveMonitoring.TabIndex = 1;
+            // 
+            // dgvPassportMonitoring
+            // 
+            this.dgvPassportMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPassportMonitoring.Location = new System.Drawing.Point(6, 6);
+            this.dgvPassportMonitoring.Name = "dgvPassportMonitoring";
+            this.dgvPassportMonitoring.ReadOnly = true;
+            this.dgvPassportMonitoring.RowHeadersWidth = 51;
+            this.dgvPassportMonitoring.RowTemplate.Height = 24;
+            this.dgvPassportMonitoring.Size = new System.Drawing.Size(1877, 960);
+            this.dgvPassportMonitoring.TabIndex = 1;
+            // 
+            // refreshListToolStripMenuItem
+            // 
+            this.refreshListToolStripMenuItem.Name = "refreshListToolStripMenuItem";
+            this.refreshListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.refreshListToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.refreshListToolStripMenuItem.Text = "Refresh";
+            this.refreshListToolStripMenuItem.Click += new System.EventHandler(this.RefreshListToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1884,6 +1998,14 @@
             this.groupBox2.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.tabEmployeeWithoutID.ResumeLayout(false);
+            this.tabHealthCardMonitoring.ResumeLayout(false);
+            this.tabLeaveMonitoring.ResumeLayout(false);
+            this.tabPassportMonitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2036,6 +2158,15 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabEmployeeWithoutID;
+        private System.Windows.Forms.DataGridView dgvEmployeesWithoutID;
+        private System.Windows.Forms.TabPage tabHealthCardMonitoring;
+        private System.Windows.Forms.DataGridView dgvHealthCardMonitoring;
+        private System.Windows.Forms.TabPage tabLeaveMonitoring;
+        private System.Windows.Forms.DataGridView dgvLeaveMonitoring;
+        private System.Windows.Forms.TabPage tabPassportMonitoring;
+        private System.Windows.Forms.DataGridView dgvPassportMonitoring;
+        private System.Windows.Forms.ToolStripMenuItem refreshListToolStripMenuItem;
     }
 }
 
