@@ -95,10 +95,18 @@ namespace BGC_HRS.Models
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = SQLSTR;
             connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
-
-            return "Record created for " + employee_name + " successfully!";
+            try
+            {
+                command.ExecuteNonQuery();
+                return "Record created for " + employee_name + " successfully!";
+            }
+            catch (Exception)
+            {
+                return "Error";
+            } finally
+            {
+                connection.Close();
+            }
         }
 
         public string update()

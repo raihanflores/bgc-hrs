@@ -68,9 +68,10 @@ namespace BGC_HRS
             loadEmployeeRecords(employee_id);
             LoadEmployeeList(employee_id);
             LoadEmployeesWithoutIDList(employee_id);
-            LoadHealthCardMonitoringList(employee_id);
+            LoadHealthCardMonitoringList();
             LoadLeaveMonitoringList(employee_id);
-            LoadPassportMonitoringList(employee_id);
+            LoadPassportMonitoringList();
+            LoadRPMonitoringList();
         }
 
         private void JobList()
@@ -201,7 +202,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site NAME`, " +
                                                         "actual_job_title as `Actual Job`, nationality as `Nationality`, passport_number as `Passport No.`, passport_issue_date as `Date Issued`, " +
                                                         "passport_expiry_date as `Date expiry`, doha_entry as `Doha Entry`, joining_date as `Joining Date`, DATEDIFF(NOW(), joining_date) AS `Days In Qatar` " +
-                                                        "from employee", connection);
+                                                        "from employee where residence_number is null or residence_number = ''", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dgvEmployeesWithoutID.DefaultCellStyle.Font = new Font("Roboto", 10);
@@ -212,7 +213,27 @@ namespace BGC_HRS
             }
         }
 
-        private void LoadHealthCardMonitoringList(string id)
+        private void LoadRPMonitoringList()
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
+                                                       "nationality as `Nationality`, passport_number as `Passport No.`, " +
+                                                        "passport_expiry_date as `Date expiry`, residence_number as `RP Number`, residence_expiry_date as `RP Expiry Date`, DATEDIFF(NOW(), residence_expiry_date) AS `Total Days Expired` " +
+                                                        "from employee where residence_expiry_date BETWEEN '" + dtpRPStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpRPEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvRPMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvRPMonitoring.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadHealthCardMonitoringList()
         {
             connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
 
@@ -221,7 +242,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
                                                         "nationality as `Nationality`, passport_number as `Passport No.`, residence_number AS `RP No.`, residence_expiry_date AS `RP Expiry Date`, " +
                                                         "health_card_number AS `HC Number`, health_card_expiry_date AS `HC Expiration Date` " +
-                                                        "from employee", connection);
+                                                        "from employee where health_card_number is null or health_card_number = ''", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dgvHealthCardMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
@@ -252,7 +273,7 @@ namespace BGC_HRS
             }
         }
 
-        private void LoadPassportMonitoringList(string id)
+        private void LoadPassportMonitoringList()
         {
             connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
 
@@ -261,7 +282,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
                                                         "nationality as `Nationality`, passport_number as `Passport No.`, passport_issue_date as `Date Issued`, " +
                                                         "passport_expiry_date as `Date expiry`, residence_number as `RP No.`, residence_expiry_date as `RP Exp DATE` " +
-                                                        "from employee", connection);
+                                                        "from employee where passport_expiry_date BETWEEN '" + dtpPassportStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpPassportEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dgvPassportMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
@@ -445,8 +466,15 @@ namespace BGC_HRS
         private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employee employee = AssignValues();
-            MessageBox.Show(employee.create());
-            clearAll();
+            string result = employee.create();
+            if (result == "Error")
+            {
+                MessageBox.Show("Record already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                MessageBox.Show(result);
+                clearAll();
+            }
         }
 
         private void loadAllowancesGrid(string id)
@@ -656,7 +684,7 @@ namespace BGC_HRS
         private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employee employee = AssignValues();
-            MessageBox.Show(employee.update());
+            MessageBox.Show(employee.update(), "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -722,7 +750,7 @@ namespace BGC_HRS
             LoadEmployeeList(employee_id);
             loadEmployeeRecords(employee_id);
 
-            tabControl1.SelectedIndex = 5;
+            tabControl1.SelectedIndex = 6;
         }
 
         private void BtnAddAllowance_Click(object sender, EventArgs e)
@@ -849,9 +877,25 @@ namespace BGC_HRS
         {
             LoadEmployeeList(employee_id);
             LoadEmployeesWithoutIDList(employee_id);
-            LoadHealthCardMonitoringList(employee_id);
+            LoadHealthCardMonitoringList();
             LoadLeaveMonitoringList(employee_id);
-            LoadPassportMonitoringList(employee_id);
+            LoadPassportMonitoringList();
+            LoadRPMonitoringList();
+        }
+
+        private void BtnRPSearch_Click(object sender, EventArgs e)
+        {
+            LoadRPMonitoringList();
+        }
+
+        private void BtnHCSearch_Click(object sender, EventArgs e)
+        {
+            LoadHealthCardMonitoringList();
+        }
+
+        private void BtnPassportSearch_Click(object sender, EventArgs e)
+        {
+            LoadPassportMonitoringList();
         }
     }
 }

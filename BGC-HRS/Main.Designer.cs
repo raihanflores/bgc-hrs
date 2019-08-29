@@ -31,6 +31,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDetailView = new System.Windows.Forms.TabPage();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
+            this.tabRPMonitoring = new System.Windows.Forms.TabPage();
+            this.dgvRPMonitoring = new System.Windows.Forms.DataGridView();
+            this.tabEmployeeWithoutID = new System.Windows.Forms.TabPage();
+            this.dgvEmployeesWithoutID = new System.Windows.Forms.DataGridView();
+            this.tabHealthCardMonitoring = new System.Windows.Forms.TabPage();
+            this.dgvHealthCardMonitoring = new System.Windows.Forms.DataGridView();
+            this.tabLeaveMonitoring = new System.Windows.Forms.TabPage();
+            this.dgvLeaveMonitoring = new System.Windows.Forms.DataGridView();
+            this.tabPassportMonitoring = new System.Windows.Forms.TabPage();
+            this.dgvPassportMonitoring = new System.Windows.Forms.DataGridView();
             this.tablistView = new System.Windows.Forms.TabPage();
             this.lblId = new System.Windows.Forms.Label();
             this.cbDegree = new System.Windows.Forms.ComboBox();
@@ -174,18 +184,47 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabEmployeeWithoutID = new System.Windows.Forms.TabPage();
-            this.tabHealthCardMonitoring = new System.Windows.Forms.TabPage();
-            this.tabLeaveMonitoring = new System.Windows.Forms.TabPage();
-            this.tabPassportMonitoring = new System.Windows.Forms.TabPage();
-            this.dgvEmployeesWithoutID = new System.Windows.Forms.DataGridView();
-            this.dgvHealthCardMonitoring = new System.Windows.Forms.DataGridView();
-            this.dgvLeaveMonitoring = new System.Windows.Forms.DataGridView();
-            this.dgvPassportMonitoring = new System.Windows.Forms.DataGridView();
             this.refreshListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dtpRPStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpRPEndDate = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.cbRPDateRange = new System.Windows.Forms.ComboBox();
+            this.cbHCDateRange = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.dtpHCEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpHCStartDate = new System.Windows.Forms.DateTimePicker();
+            this.cbLeaveDateRange = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.dtpLeaveEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpLeaveStartDate = new System.Windows.Forms.DateTimePicker();
+            this.cbPassportDateRange = new System.Windows.Forms.ComboBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.dtpPassportEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpPassportStartDate = new System.Windows.Forms.DateTimePicker();
+            this.btnRPSearch = new System.Windows.Forms.Button();
+            this.btnHCSearch = new System.Windows.Forms.Button();
+            this.btnPassportSearch = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabDetailView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
+            this.tabRPMonitoring.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRPMonitoring)).BeginInit();
+            this.tabEmployeeWithoutID.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).BeginInit();
+            this.tabHealthCardMonitoring.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).BeginInit();
+            this.tabLeaveMonitoring.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).BeginInit();
+            this.tabPassportMonitoring.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).BeginInit();
             this.tablistView.SuspendLayout();
             this.gbStatus.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -202,19 +241,12 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            this.tabEmployeeWithoutID.SuspendLayout();
-            this.tabHealthCardMonitoring.SuspendLayout();
-            this.tabLeaveMonitoring.SuspendLayout();
-            this.tabPassportMonitoring.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabDetailView);
+            this.tabControl1.Controls.Add(this.tabRPMonitoring);
             this.tabControl1.Controls.Add(this.tabEmployeeWithoutID);
             this.tabControl1.Controls.Add(this.tabHealthCardMonitoring);
             this.tabControl1.Controls.Add(this.tabLeaveMonitoring);
@@ -237,7 +269,7 @@
             this.tabDetailView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDetailView.Size = new System.Drawing.Size(1889, 973);
             this.tabDetailView.TabIndex = 1;
-            this.tabDetailView.Text = "Employee List";
+            this.tabDetailView.Text = "Employees";
             this.tabDetailView.UseVisualStyleBackColor = true;
             // 
             // dgvEmployeeList
@@ -251,6 +283,138 @@
             this.dgvEmployeeList.Size = new System.Drawing.Size(1877, 960);
             this.dgvEmployeeList.TabIndex = 0;
             this.dgvEmployeeList.DoubleClick += new System.EventHandler(this.DgvEmployeeList_DoubleClick);
+            // 
+            // tabRPMonitoring
+            // 
+            this.tabRPMonitoring.Controls.Add(this.btnRPSearch);
+            this.tabRPMonitoring.Controls.Add(this.cbRPDateRange);
+            this.tabRPMonitoring.Controls.Add(this.label13);
+            this.tabRPMonitoring.Controls.Add(this.label28);
+            this.tabRPMonitoring.Controls.Add(this.label12);
+            this.tabRPMonitoring.Controls.Add(this.dtpRPEndDate);
+            this.tabRPMonitoring.Controls.Add(this.dtpRPStartDate);
+            this.tabRPMonitoring.Controls.Add(this.dgvRPMonitoring);
+            this.tabRPMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabRPMonitoring.Name = "tabRPMonitoring";
+            this.tabRPMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabRPMonitoring.TabIndex = 6;
+            this.tabRPMonitoring.Text = "RP Monitoring";
+            this.tabRPMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // dgvRPMonitoring
+            // 
+            this.dgvRPMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRPMonitoring.Location = new System.Drawing.Point(6, 61);
+            this.dgvRPMonitoring.Name = "dgvRPMonitoring";
+            this.dgvRPMonitoring.ReadOnly = true;
+            this.dgvRPMonitoring.RowHeadersWidth = 51;
+            this.dgvRPMonitoring.RowTemplate.Height = 24;
+            this.dgvRPMonitoring.Size = new System.Drawing.Size(1877, 905);
+            this.dgvRPMonitoring.TabIndex = 2;
+            // 
+            // tabEmployeeWithoutID
+            // 
+            this.tabEmployeeWithoutID.Controls.Add(this.dgvEmployeesWithoutID);
+            this.tabEmployeeWithoutID.Location = new System.Drawing.Point(4, 33);
+            this.tabEmployeeWithoutID.Name = "tabEmployeeWithoutID";
+            this.tabEmployeeWithoutID.Size = new System.Drawing.Size(1889, 973);
+            this.tabEmployeeWithoutID.TabIndex = 2;
+            this.tabEmployeeWithoutID.Text = "Employees w/o ID";
+            this.tabEmployeeWithoutID.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmployeesWithoutID
+            // 
+            this.dgvEmployeesWithoutID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeesWithoutID.Location = new System.Drawing.Point(6, 6);
+            this.dgvEmployeesWithoutID.Name = "dgvEmployeesWithoutID";
+            this.dgvEmployeesWithoutID.ReadOnly = true;
+            this.dgvEmployeesWithoutID.RowHeadersWidth = 51;
+            this.dgvEmployeesWithoutID.RowTemplate.Height = 24;
+            this.dgvEmployeesWithoutID.Size = new System.Drawing.Size(1877, 960);
+            this.dgvEmployeesWithoutID.TabIndex = 1;
+            // 
+            // tabHealthCardMonitoring
+            // 
+            this.tabHealthCardMonitoring.Controls.Add(this.btnHCSearch);
+            this.tabHealthCardMonitoring.Controls.Add(this.cbHCDateRange);
+            this.tabHealthCardMonitoring.Controls.Add(this.label29);
+            this.tabHealthCardMonitoring.Controls.Add(this.label31);
+            this.tabHealthCardMonitoring.Controls.Add(this.label44);
+            this.tabHealthCardMonitoring.Controls.Add(this.dtpHCEndDate);
+            this.tabHealthCardMonitoring.Controls.Add(this.dtpHCStartDate);
+            this.tabHealthCardMonitoring.Controls.Add(this.dgvHealthCardMonitoring);
+            this.tabHealthCardMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabHealthCardMonitoring.Name = "tabHealthCardMonitoring";
+            this.tabHealthCardMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabHealthCardMonitoring.TabIndex = 3;
+            this.tabHealthCardMonitoring.Text = "Health Card Monitoring";
+            this.tabHealthCardMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // dgvHealthCardMonitoring
+            // 
+            this.dgvHealthCardMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHealthCardMonitoring.Location = new System.Drawing.Point(6, 61);
+            this.dgvHealthCardMonitoring.Name = "dgvHealthCardMonitoring";
+            this.dgvHealthCardMonitoring.ReadOnly = true;
+            this.dgvHealthCardMonitoring.RowHeadersWidth = 51;
+            this.dgvHealthCardMonitoring.RowTemplate.Height = 24;
+            this.dgvHealthCardMonitoring.Size = new System.Drawing.Size(1877, 905);
+            this.dgvHealthCardMonitoring.TabIndex = 1;
+            // 
+            // tabLeaveMonitoring
+            // 
+            this.tabLeaveMonitoring.Controls.Add(this.cbLeaveDateRange);
+            this.tabLeaveMonitoring.Controls.Add(this.label45);
+            this.tabLeaveMonitoring.Controls.Add(this.label46);
+            this.tabLeaveMonitoring.Controls.Add(this.label47);
+            this.tabLeaveMonitoring.Controls.Add(this.dtpLeaveEndDate);
+            this.tabLeaveMonitoring.Controls.Add(this.dtpLeaveStartDate);
+            this.tabLeaveMonitoring.Controls.Add(this.dgvLeaveMonitoring);
+            this.tabLeaveMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabLeaveMonitoring.Name = "tabLeaveMonitoring";
+            this.tabLeaveMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabLeaveMonitoring.TabIndex = 4;
+            this.tabLeaveMonitoring.Text = "Leave Monitoring";
+            this.tabLeaveMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // dgvLeaveMonitoring
+            // 
+            this.dgvLeaveMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLeaveMonitoring.Location = new System.Drawing.Point(6, 61);
+            this.dgvLeaveMonitoring.Name = "dgvLeaveMonitoring";
+            this.dgvLeaveMonitoring.ReadOnly = true;
+            this.dgvLeaveMonitoring.RowHeadersWidth = 51;
+            this.dgvLeaveMonitoring.RowTemplate.Height = 24;
+            this.dgvLeaveMonitoring.Size = new System.Drawing.Size(1877, 905);
+            this.dgvLeaveMonitoring.TabIndex = 1;
+            // 
+            // tabPassportMonitoring
+            // 
+            this.tabPassportMonitoring.Controls.Add(this.btnPassportSearch);
+            this.tabPassportMonitoring.Controls.Add(this.cbPassportDateRange);
+            this.tabPassportMonitoring.Controls.Add(this.label49);
+            this.tabPassportMonitoring.Controls.Add(this.label51);
+            this.tabPassportMonitoring.Controls.Add(this.label52);
+            this.tabPassportMonitoring.Controls.Add(this.dtpPassportEndDate);
+            this.tabPassportMonitoring.Controls.Add(this.dtpPassportStartDate);
+            this.tabPassportMonitoring.Controls.Add(this.dgvPassportMonitoring);
+            this.tabPassportMonitoring.Location = new System.Drawing.Point(4, 33);
+            this.tabPassportMonitoring.Name = "tabPassportMonitoring";
+            this.tabPassportMonitoring.Size = new System.Drawing.Size(1889, 973);
+            this.tabPassportMonitoring.TabIndex = 5;
+            this.tabPassportMonitoring.Text = "Passport Monitoring";
+            this.tabPassportMonitoring.UseVisualStyleBackColor = true;
+            // 
+            // dgvPassportMonitoring
+            // 
+            this.dgvPassportMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPassportMonitoring.Location = new System.Drawing.Point(6, 61);
+            this.dgvPassportMonitoring.Name = "dgvPassportMonitoring";
+            this.dgvPassportMonitoring.ReadOnly = true;
+            this.dgvPassportMonitoring.RowHeadersWidth = 51;
+            this.dgvPassportMonitoring.RowTemplate.Height = 24;
+            this.dgvPassportMonitoring.Size = new System.Drawing.Size(1877, 905);
+            this.dgvPassportMonitoring.TabIndex = 1;
             // 
             // tablistView
             // 
@@ -1612,7 +1776,6 @@
             this.lblEmployeeCode.Name = "lblEmployeeCode";
             this.lblEmployeeCode.Size = new System.Drawing.Size(247, 25);
             this.lblEmployeeCode.TabIndex = 27;
-            this.lblEmployeeCode.Text = "BGS152";
             // 
             // label4
             // 
@@ -1865,97 +2028,310 @@
             this.findToolStripMenuItem.Text = "Find";
             this.findToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
-            // tabEmployeeWithoutID
-            // 
-            this.tabEmployeeWithoutID.Controls.Add(this.dgvEmployeesWithoutID);
-            this.tabEmployeeWithoutID.Location = new System.Drawing.Point(4, 33);
-            this.tabEmployeeWithoutID.Name = "tabEmployeeWithoutID";
-            this.tabEmployeeWithoutID.Size = new System.Drawing.Size(1889, 973);
-            this.tabEmployeeWithoutID.TabIndex = 2;
-            this.tabEmployeeWithoutID.Text = "Employees w/o ID";
-            this.tabEmployeeWithoutID.UseVisualStyleBackColor = true;
-            // 
-            // tabHealthCardMonitoring
-            // 
-            this.tabHealthCardMonitoring.Controls.Add(this.dgvHealthCardMonitoring);
-            this.tabHealthCardMonitoring.Location = new System.Drawing.Point(4, 33);
-            this.tabHealthCardMonitoring.Name = "tabHealthCardMonitoring";
-            this.tabHealthCardMonitoring.Size = new System.Drawing.Size(1889, 973);
-            this.tabHealthCardMonitoring.TabIndex = 3;
-            this.tabHealthCardMonitoring.Text = "Health Card Monitoring";
-            this.tabHealthCardMonitoring.UseVisualStyleBackColor = true;
-            // 
-            // tabLeaveMonitoring
-            // 
-            this.tabLeaveMonitoring.Controls.Add(this.dgvLeaveMonitoring);
-            this.tabLeaveMonitoring.Location = new System.Drawing.Point(4, 33);
-            this.tabLeaveMonitoring.Name = "tabLeaveMonitoring";
-            this.tabLeaveMonitoring.Size = new System.Drawing.Size(1889, 973);
-            this.tabLeaveMonitoring.TabIndex = 4;
-            this.tabLeaveMonitoring.Text = "Leave Monitoring";
-            this.tabLeaveMonitoring.UseVisualStyleBackColor = true;
-            // 
-            // tabPassportMonitoring
-            // 
-            this.tabPassportMonitoring.Controls.Add(this.dgvPassportMonitoring);
-            this.tabPassportMonitoring.Location = new System.Drawing.Point(4, 33);
-            this.tabPassportMonitoring.Name = "tabPassportMonitoring";
-            this.tabPassportMonitoring.Size = new System.Drawing.Size(1889, 973);
-            this.tabPassportMonitoring.TabIndex = 5;
-            this.tabPassportMonitoring.Text = "Passport Monitoring";
-            this.tabPassportMonitoring.UseVisualStyleBackColor = true;
-            // 
-            // dgvEmployeesWithoutID
-            // 
-            this.dgvEmployeesWithoutID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployeesWithoutID.Location = new System.Drawing.Point(6, 6);
-            this.dgvEmployeesWithoutID.Name = "dgvEmployeesWithoutID";
-            this.dgvEmployeesWithoutID.ReadOnly = true;
-            this.dgvEmployeesWithoutID.RowHeadersWidth = 51;
-            this.dgvEmployeesWithoutID.RowTemplate.Height = 24;
-            this.dgvEmployeesWithoutID.Size = new System.Drawing.Size(1877, 960);
-            this.dgvEmployeesWithoutID.TabIndex = 1;
-            // 
-            // dgvHealthCardMonitoring
-            // 
-            this.dgvHealthCardMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHealthCardMonitoring.Location = new System.Drawing.Point(6, 6);
-            this.dgvHealthCardMonitoring.Name = "dgvHealthCardMonitoring";
-            this.dgvHealthCardMonitoring.ReadOnly = true;
-            this.dgvHealthCardMonitoring.RowHeadersWidth = 51;
-            this.dgvHealthCardMonitoring.RowTemplate.Height = 24;
-            this.dgvHealthCardMonitoring.Size = new System.Drawing.Size(1877, 960);
-            this.dgvHealthCardMonitoring.TabIndex = 1;
-            // 
-            // dgvLeaveMonitoring
-            // 
-            this.dgvLeaveMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLeaveMonitoring.Location = new System.Drawing.Point(6, 6);
-            this.dgvLeaveMonitoring.Name = "dgvLeaveMonitoring";
-            this.dgvLeaveMonitoring.ReadOnly = true;
-            this.dgvLeaveMonitoring.RowHeadersWidth = 51;
-            this.dgvLeaveMonitoring.RowTemplate.Height = 24;
-            this.dgvLeaveMonitoring.Size = new System.Drawing.Size(1877, 960);
-            this.dgvLeaveMonitoring.TabIndex = 1;
-            // 
-            // dgvPassportMonitoring
-            // 
-            this.dgvPassportMonitoring.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPassportMonitoring.Location = new System.Drawing.Point(6, 6);
-            this.dgvPassportMonitoring.Name = "dgvPassportMonitoring";
-            this.dgvPassportMonitoring.ReadOnly = true;
-            this.dgvPassportMonitoring.RowHeadersWidth = 51;
-            this.dgvPassportMonitoring.RowTemplate.Height = 24;
-            this.dgvPassportMonitoring.Size = new System.Drawing.Size(1877, 960);
-            this.dgvPassportMonitoring.TabIndex = 1;
-            // 
             // refreshListToolStripMenuItem
             // 
             this.refreshListToolStripMenuItem.Name = "refreshListToolStripMenuItem";
-            this.refreshListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.refreshListToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.refreshListToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.refreshListToolStripMenuItem.Text = "Refresh";
             this.refreshListToolStripMenuItem.Click += new System.EventHandler(this.RefreshListToolStripMenuItem_Click);
+            // 
+            // dtpRPStartDate
+            // 
+            this.dtpRPStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpRPStartDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpRPStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRPStartDate.Location = new System.Drawing.Point(343, 15);
+            this.dtpRPStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpRPStartDate.Name = "dtpRPStartDate";
+            this.dtpRPStartDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpRPStartDate.TabIndex = 66;
+            this.dtpRPStartDate.TabStop = false;
+            // 
+            // dtpRPEndDate
+            // 
+            this.dtpRPEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpRPEndDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpRPEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRPEndDate.Location = new System.Drawing.Point(569, 15);
+            this.dtpRPEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpRPEndDate.Name = "dtpRPEndDate";
+            this.dtpRPEndDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpRPEndDate.TabIndex = 67;
+            this.dtpRPEndDate.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(256, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 25);
+            this.label12.TabIndex = 146;
+            this.label12.Text = "Start Date";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(482, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 25);
+            this.label13.TabIndex = 146;
+            this.label13.Text = "End Date";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label28
+            // 
+            this.label28.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(17, 17);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(93, 25);
+            this.label28.TabIndex = 146;
+            this.label28.Text = "Date Range";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbRPDateRange
+            // 
+            this.cbRPDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRPDateRange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRPDateRange.FormattingEnabled = true;
+            this.cbRPDateRange.Location = new System.Drawing.Point(117, 14);
+            this.cbRPDateRange.Margin = new System.Windows.Forms.Padding(4);
+            this.cbRPDateRange.Name = "cbRPDateRange";
+            this.cbRPDateRange.Size = new System.Drawing.Size(132, 28);
+            this.cbRPDateRange.TabIndex = 147;
+            this.cbRPDateRange.TabStop = false;
+            // 
+            // cbHCDateRange
+            // 
+            this.cbHCDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHCDateRange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHCDateRange.FormattingEnabled = true;
+            this.cbHCDateRange.Location = new System.Drawing.Point(117, 14);
+            this.cbHCDateRange.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHCDateRange.Name = "cbHCDateRange";
+            this.cbHCDateRange.Size = new System.Drawing.Size(132, 28);
+            this.cbHCDateRange.TabIndex = 153;
+            this.cbHCDateRange.TabStop = false;
+            // 
+            // label29
+            // 
+            this.label29.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(482, 17);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(80, 25);
+            this.label29.TabIndex = 150;
+            this.label29.Text = "End Date";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(17, 17);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(93, 25);
+            this.label31.TabIndex = 151;
+            this.label31.Text = "Date Range";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label44
+            // 
+            this.label44.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(256, 17);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(80, 25);
+            this.label44.TabIndex = 152;
+            this.label44.Text = "Start Date";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpHCEndDate
+            // 
+            this.dtpHCEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpHCEndDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHCEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHCEndDate.Location = new System.Drawing.Point(569, 15);
+            this.dtpHCEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpHCEndDate.Name = "dtpHCEndDate";
+            this.dtpHCEndDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpHCEndDate.TabIndex = 149;
+            this.dtpHCEndDate.TabStop = false;
+            // 
+            // dtpHCStartDate
+            // 
+            this.dtpHCStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpHCStartDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHCStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHCStartDate.Location = new System.Drawing.Point(343, 15);
+            this.dtpHCStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpHCStartDate.Name = "dtpHCStartDate";
+            this.dtpHCStartDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpHCStartDate.TabIndex = 148;
+            this.dtpHCStartDate.TabStop = false;
+            // 
+            // cbLeaveDateRange
+            // 
+            this.cbLeaveDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLeaveDateRange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLeaveDateRange.FormattingEnabled = true;
+            this.cbLeaveDateRange.Location = new System.Drawing.Point(117, 14);
+            this.cbLeaveDateRange.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLeaveDateRange.Name = "cbLeaveDateRange";
+            this.cbLeaveDateRange.Size = new System.Drawing.Size(132, 28);
+            this.cbLeaveDateRange.TabIndex = 159;
+            this.cbLeaveDateRange.TabStop = false;
+            // 
+            // label45
+            // 
+            this.label45.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(482, 17);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(80, 25);
+            this.label45.TabIndex = 156;
+            this.label45.Text = "End Date";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label46
+            // 
+            this.label46.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(17, 17);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(93, 25);
+            this.label46.TabIndex = 157;
+            this.label46.Text = "Date Range";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label47
+            // 
+            this.label47.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(256, 17);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(80, 25);
+            this.label47.TabIndex = 158;
+            this.label47.Text = "Start Date";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpLeaveEndDate
+            // 
+            this.dtpLeaveEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpLeaveEndDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpLeaveEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpLeaveEndDate.Location = new System.Drawing.Point(569, 15);
+            this.dtpLeaveEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpLeaveEndDate.Name = "dtpLeaveEndDate";
+            this.dtpLeaveEndDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpLeaveEndDate.TabIndex = 155;
+            this.dtpLeaveEndDate.TabStop = false;
+            // 
+            // dtpLeaveStartDate
+            // 
+            this.dtpLeaveStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpLeaveStartDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpLeaveStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpLeaveStartDate.Location = new System.Drawing.Point(343, 15);
+            this.dtpLeaveStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpLeaveStartDate.Name = "dtpLeaveStartDate";
+            this.dtpLeaveStartDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpLeaveStartDate.TabIndex = 154;
+            this.dtpLeaveStartDate.TabStop = false;
+            // 
+            // cbPassportDateRange
+            // 
+            this.cbPassportDateRange.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPassportDateRange.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPassportDateRange.FormattingEnabled = true;
+            this.cbPassportDateRange.Location = new System.Drawing.Point(117, 14);
+            this.cbPassportDateRange.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPassportDateRange.Name = "cbPassportDateRange";
+            this.cbPassportDateRange.Size = new System.Drawing.Size(132, 28);
+            this.cbPassportDateRange.TabIndex = 165;
+            this.cbPassportDateRange.TabStop = false;
+            // 
+            // label49
+            // 
+            this.label49.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(482, 17);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(80, 25);
+            this.label49.TabIndex = 162;
+            this.label49.Text = "End Date";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label51
+            // 
+            this.label51.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(17, 17);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(93, 25);
+            this.label51.TabIndex = 163;
+            this.label51.Text = "Date Range";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label52
+            // 
+            this.label52.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(256, 17);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(80, 25);
+            this.label52.TabIndex = 164;
+            this.label52.Text = "Start Date";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpPassportEndDate
+            // 
+            this.dtpPassportEndDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpPassportEndDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPassportEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPassportEndDate.Location = new System.Drawing.Point(569, 15);
+            this.dtpPassportEndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpPassportEndDate.Name = "dtpPassportEndDate";
+            this.dtpPassportEndDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpPassportEndDate.TabIndex = 161;
+            this.dtpPassportEndDate.TabStop = false;
+            // 
+            // dtpPassportStartDate
+            // 
+            this.dtpPassportStartDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpPassportStartDate.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPassportStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPassportStartDate.Location = new System.Drawing.Point(343, 15);
+            this.dtpPassportStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpPassportStartDate.Name = "dtpPassportStartDate";
+            this.dtpPassportStartDate.Size = new System.Drawing.Size(132, 27);
+            this.dtpPassportStartDate.TabIndex = 160;
+            this.dtpPassportStartDate.TabStop = false;
+            // 
+            // btnRPSearch
+            // 
+            this.btnRPSearch.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRPSearch.Location = new System.Drawing.Point(708, 14);
+            this.btnRPSearch.Name = "btnRPSearch";
+            this.btnRPSearch.Size = new System.Drawing.Size(110, 28);
+            this.btnRPSearch.TabIndex = 148;
+            this.btnRPSearch.Text = "Search";
+            this.btnRPSearch.UseVisualStyleBackColor = true;
+            this.btnRPSearch.Click += new System.EventHandler(this.BtnRPSearch_Click);
+            // 
+            // btnHCSearch
+            // 
+            this.btnHCSearch.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHCSearch.Location = new System.Drawing.Point(708, 14);
+            this.btnHCSearch.Name = "btnHCSearch";
+            this.btnHCSearch.Size = new System.Drawing.Size(110, 28);
+            this.btnHCSearch.TabIndex = 154;
+            this.btnHCSearch.Text = "Search";
+            this.btnHCSearch.UseVisualStyleBackColor = true;
+            this.btnHCSearch.Click += new System.EventHandler(this.BtnHCSearch_Click);
+            // 
+            // btnPassportSearch
+            // 
+            this.btnPassportSearch.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassportSearch.Location = new System.Drawing.Point(708, 14);
+            this.btnPassportSearch.Name = "btnPassportSearch";
+            this.btnPassportSearch.Size = new System.Drawing.Size(110, 28);
+            this.btnPassportSearch.TabIndex = 166;
+            this.btnPassportSearch.Text = "Search";
+            this.btnPassportSearch.UseVisualStyleBackColor = true;
+            this.btnPassportSearch.Click += new System.EventHandler(this.BtnPassportSearch_Click);
             // 
             // Main
             // 
@@ -1976,6 +2352,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabDetailView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
+            this.tabRPMonitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRPMonitoring)).EndInit();
+            this.tabEmployeeWithoutID.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).EndInit();
+            this.tabHealthCardMonitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).EndInit();
+            this.tabLeaveMonitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).EndInit();
+            this.tabPassportMonitoring.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).EndInit();
             this.tablistView.ResumeLayout(false);
             this.tablistView.PerformLayout();
             this.gbStatus.ResumeLayout(false);
@@ -1998,14 +2384,6 @@
             this.groupBox2.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.tabEmployeeWithoutID.ResumeLayout(false);
-            this.tabHealthCardMonitoring.ResumeLayout(false);
-            this.tabLeaveMonitoring.ResumeLayout(false);
-            this.tabPassportMonitoring.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesWithoutID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHealthCardMonitoring)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLeaveMonitoring)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPassportMonitoring)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2167,6 +2545,35 @@
         private System.Windows.Forms.TabPage tabPassportMonitoring;
         private System.Windows.Forms.DataGridView dgvPassportMonitoring;
         private System.Windows.Forms.ToolStripMenuItem refreshListToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabRPMonitoring;
+        private System.Windows.Forms.DataGridView dgvRPMonitoring;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpRPEndDate;
+        private System.Windows.Forms.DateTimePicker dtpRPStartDate;
+        private System.Windows.Forms.ComboBox cbRPDateRange;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cbHCDateRange;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.DateTimePicker dtpHCEndDate;
+        private System.Windows.Forms.DateTimePicker dtpHCStartDate;
+        private System.Windows.Forms.ComboBox cbLeaveDateRange;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.DateTimePicker dtpLeaveEndDate;
+        private System.Windows.Forms.DateTimePicker dtpLeaveStartDate;
+        private System.Windows.Forms.ComboBox cbPassportDateRange;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.DateTimePicker dtpPassportEndDate;
+        private System.Windows.Forms.DateTimePicker dtpPassportStartDate;
+        private System.Windows.Forms.Button btnRPSearch;
+        private System.Windows.Forms.Button btnHCSearch;
+        private System.Windows.Forms.Button btnPassportSearch;
     }
 }
 
