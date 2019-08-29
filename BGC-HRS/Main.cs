@@ -65,8 +65,13 @@ namespace BGC_HRS
             loadAllowancesGrid(employee_id);
             loadSalaryIncreasesGrid(employee_id);
             loadEmployeeLeavesGrid(employee_id);
-            LoadEmployeeList(employee_id);
             loadEmployeeRecords(employee_id);
+            LoadEmployeeList(employee_id);
+            LoadEmployeesWithoutIDList(employee_id);
+            LoadHealthCardMonitoringList();
+            LoadLeaveMonitoringList(employee_id);
+            LoadPassportMonitoringList();
+            LoadRPMonitoringList();
         }
 
         private void JobList()
@@ -174,11 +179,114 @@ namespace BGC_HRS
 
             if (this.OpenConnection() == true)
             {
-                mySqlDataAdapter = new MySqlDataAdapter("select * from employee", connection);
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site NAME`, " +
+                                                        "actual_job_title as `Actual Job`, nationality as `Nationality`, sponsorship as `Sponsorship`, joining_date as `Joining Date`, passport_number as `Passport NO.`, " +
+                                                        "passport_issue_date as `Date Issued`, passport_expiry_date as `Date expiry`, residence_number as `RP Number`, residence_expiry_date as `RP Exp DATE` " +
+                                                        "from employee", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dgvEmployeeList.DefaultCellStyle.Font = new Font("Roboto", 10);
                 dgvEmployeeList.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadEmployeesWithoutIDList(string id)
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site NAME`, " +
+                                                        "actual_job_title as `Actual Job`, nationality as `Nationality`, passport_number as `Passport No.`, passport_issue_date as `Date Issued`, " +
+                                                        "passport_expiry_date as `Date expiry`, doha_entry as `Doha Entry`, joining_date as `Joining Date`, DATEDIFF(NOW(), joining_date) AS `Days In Qatar` " +
+                                                        "from employee where residence_number is null or residence_number = ''", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvEmployeesWithoutID.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvEmployeesWithoutID.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadRPMonitoringList()
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
+                                                       "nationality as `Nationality`, passport_number as `Passport No.`, " +
+                                                        "passport_expiry_date as `Date expiry`, residence_number as `RP Number`, residence_expiry_date as `RP Expiry Date`, DATEDIFF(NOW(), residence_expiry_date) AS `Total Days Expired` " +
+                                                        "from employee where residence_expiry_date BETWEEN '" + dtpRPStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpRPEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvRPMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvRPMonitoring.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadHealthCardMonitoringList()
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
+                                                        "nationality as `Nationality`, passport_number as `Passport No.`, residence_number AS `RP No.`, residence_expiry_date AS `RP Expiry Date`, " +
+                                                        "health_card_number AS `HC Number`, health_card_expiry_date AS `HC Expiration Date` " +
+                                                        "from employee where health_card_number is null or health_card_number = ''", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvHealthCardMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvHealthCardMonitoring.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadLeaveMonitoringList(string id)
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select employee.id as ID, employee.employee_code as `Employee Code`, employee.employee_name as `Employee Name`, " +
+                                                        "employee.actual_job_title AS `Actual Job Title`, employee_leave.leave_type, employee_leave.leave_start_date, employee_leave.leave_return_date, " +
+                                                        "'' AS `Departure Date`, '' AS `Time`, 'OK' AS `RP Status` " +
+                                                        "from employee LEFT JOIN employee_leave ON employee.employee_code = employee_leave.employee_code", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvLeaveMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvLeaveMonitoring.DataSource = DS.Tables[0];
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        private void LoadPassportMonitoringList()
+        {
+            connection = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["BGC.connectionstring"].ToString());
+
+            if (this.OpenConnection() == true)
+            {
+                mySqlDataAdapter = new MySqlDataAdapter("select id as ID, employee_code as `Employee Code`, employee_name as `Employee Name`, allocation_site as `Site Name`, " +
+                                                        "nationality as `Nationality`, passport_number as `Passport No.`, passport_issue_date as `Date Issued`, " +
+                                                        "passport_expiry_date as `Date expiry`, residence_number as `RP No.`, residence_expiry_date as `RP Exp DATE` " +
+                                                        "from employee where passport_expiry_date BETWEEN '" + dtpPassportStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpPassportEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dgvPassportMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvPassportMonitoring.DataSource = DS.Tables[0];
 
                 //close connection
                 this.CloseConnection();
@@ -358,7 +466,15 @@ namespace BGC_HRS
         private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employee employee = AssignValues();
-            MessageBox.Show(employee.create());
+            string result = employee.create();
+            if (result == "Error")
+            {
+                MessageBox.Show("Record already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                MessageBox.Show(result);
+                clearAll();
+            }
         }
 
         private void loadAllowancesGrid(string id)
@@ -568,7 +684,7 @@ namespace BGC_HRS
         private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Employee employee = AssignValues();
-            MessageBox.Show(employee.update());
+            MessageBox.Show(employee.update(), "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -634,7 +750,7 @@ namespace BGC_HRS
             LoadEmployeeList(employee_id);
             loadEmployeeRecords(employee_id);
 
-            tabControl1.SelectedIndex = 1;
+            tabControl1.SelectedIndex = 6;
         }
 
         private void BtnAddAllowance_Click(object sender, EventArgs e)
@@ -715,8 +831,71 @@ namespace BGC_HRS
 
         private void EmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BGC_HRS.Helper.ClearFormControls(this.FindForm());
-            tabControl1.SelectedIndex = 1;
+            clearAll();
+            tabControl1.SelectedIndex = 5;
+        }
+
+        private void clearAll()
+        {
+            txtAge.Text = "";
+            txtBankName.Text = "";
+            txtBasicSalary.Text = "";
+            txtCardNumber.Text = "";
+            txtContactNumber.Text = "";
+            txtEmployeeName.Text = "";
+            txtEmployeeNumber.Text = "";
+            txtHCNumber.Text = "";
+            txtLocalHired.Text = "";
+            txtPassport.Text = "";
+            txtRemarks.Text = "";
+            txtRPNumber.Text = "";
+            txtStartingSalary.Text = "";
+            txtTotalAllowances.Text = "";
+            txtTotalSalary.Text = "";
+            txtTotalSalaryIncrease.Text = "";
+            cbAccommodation.SelectedIndex = 0;
+            cbActualJobTitle.SelectedIndex = 0;
+            cbBloodGroup.SelectedIndex = 0;
+            cbDaysOfLeave.SelectedIndex = 0;
+            cbDegree.SelectedIndex = 0;
+            cbJobTitleAsJO.SelectedIndex = 0;
+            cbNationality.SelectedIndex = 0;
+            cbRecruitedBy.SelectedIndex = 0;
+            cbSiteName.SelectedIndex = 0;
+            cbSponsorship.SelectedIndex = 0;
+            dgvSalaryInceases.DataSource = null;
+            dgvVacation.DataSource = null;
+            dgAllowances.DataSource = null;
+            lblAllowancesCount.Text = "";
+            lblVacationCount.Text = "";
+            lblEmployeeCode.Text = "";
+            lblEmployeeName.Text = "";
+            lblSalaryIncreasesCount.Text = "";
+        }
+
+        private void RefreshListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadEmployeeList(employee_id);
+            LoadEmployeesWithoutIDList(employee_id);
+            LoadHealthCardMonitoringList();
+            LoadLeaveMonitoringList(employee_id);
+            LoadPassportMonitoringList();
+            LoadRPMonitoringList();
+        }
+
+        private void BtnRPSearch_Click(object sender, EventArgs e)
+        {
+            LoadRPMonitoringList();
+        }
+
+        private void BtnHCSearch_Click(object sender, EventArgs e)
+        {
+            LoadHealthCardMonitoringList();
+        }
+
+        private void BtnPassportSearch_Click(object sender, EventArgs e)
+        {
+            LoadPassportMonitoringList();
         }
     }
 }
