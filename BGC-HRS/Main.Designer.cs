@@ -212,6 +212,7 @@
             this.btnRPSearch = new System.Windows.Forms.Button();
             this.btnHCSearch = new System.Windows.Forms.Button();
             this.btnPassportSearch = new System.Windows.Forms.Button();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabDetailView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
@@ -1949,6 +1950,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.exportToolStripMenuItem,
             this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -2333,6 +2335,13 @@
             this.btnPassportSearch.UseVisualStyleBackColor = true;
             this.btnPassportSearch.Click += new System.EventHandler(this.BtnPassportSearch_Click);
             // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.ExportToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2574,6 +2583,7 @@
         private System.Windows.Forms.Button btnRPSearch;
         private System.Windows.Forms.Button btnHCSearch;
         private System.Windows.Forms.Button btnPassportSearch;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
     }
 }
 

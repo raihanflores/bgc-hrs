@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BGC_HRS.Models;
+using Microsoft.Office.Interop.Excel;
 using MySql.Data.MySqlClient;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace BGC_HRS
 {
@@ -24,7 +26,7 @@ namespace BGC_HRS
 
         private void ClearControl(Control control)
         {
-            TextBox tb = control as TextBox;
+            System.Windows.Forms.TextBox tb = control as System.Windows.Forms.TextBox;
             if (tb != null)
             {
                 tb.Text = String.Empty;
@@ -185,7 +187,7 @@ namespace BGC_HRS
                                                         "from employee", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvEmployeeList.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvEmployeeList.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvEmployeeList.DataSource = DS.Tables[0];
 
                 //close connection
@@ -205,7 +207,7 @@ namespace BGC_HRS
                                                         "from employee where residence_number is null or residence_number = ''", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvEmployeesWithoutID.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvEmployeesWithoutID.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvEmployeesWithoutID.DataSource = DS.Tables[0];
 
                 //close connection
@@ -225,7 +227,7 @@ namespace BGC_HRS
                                                         "from employee where residence_expiry_date BETWEEN '" + dtpRPStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpRPEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvRPMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvRPMonitoring.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvRPMonitoring.DataSource = DS.Tables[0];
 
                 //close connection
@@ -245,7 +247,7 @@ namespace BGC_HRS
                                                         "from employee where health_card_number is null or health_card_number = ''", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvHealthCardMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvHealthCardMonitoring.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvHealthCardMonitoring.DataSource = DS.Tables[0];
 
                 //close connection
@@ -265,7 +267,7 @@ namespace BGC_HRS
                                                         "from employee LEFT JOIN employee_leave ON employee.employee_code = employee_leave.employee_code", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvLeaveMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvLeaveMonitoring.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvLeaveMonitoring.DataSource = DS.Tables[0];
 
                 //close connection
@@ -285,7 +287,7 @@ namespace BGC_HRS
                                                         "from employee where passport_expiry_date BETWEEN '" + dtpPassportStartDate.Value.ToString("yyyy-MM-dd") + "' AND '" + dtpPassportEndDate.Value.ToString("yyyy-MM-dd") + "'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvPassportMonitoring.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvPassportMonitoring.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvPassportMonitoring.DataSource = DS.Tables[0];
 
                 //close connection
@@ -486,7 +488,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select date_submitted AS `Date Submitted`, effective_date AS `Effective Date`, allowance_type AS `Allowance Type`, allowance_amount AS `Allowance Amount` from employee_allowances where employee_code = '"+ id +"'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgAllowances.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgAllowances.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgAllowances.DataSource = DS.Tables[0];
 
                 lblAllowancesCount.Text = DS.Tables[0].Rows.Count.ToString();
@@ -505,7 +507,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select date_submitted AS `Date Submitted`, date_effective AS `Effective Date`, note AS `Note`, increase_amount AS `Increase Amount` from salary_increases where employee_code = '" + id + "'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvSalaryInceases.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvSalaryInceases.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvSalaryInceases.DataSource = DS.Tables[0];
 
                 //close connection
@@ -522,7 +524,7 @@ namespace BGC_HRS
                 mySqlDataAdapter = new MySqlDataAdapter("select depart_date AS `Depart Date`, return_date AS `Return Date`, rejoining_date AS `Rejoining Date`, reason_for_vacation AS `Reason for Vacation`, days_of_vacation as `Days of Vacation` from employee_leaves where employee_code = '" + id + "'", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
-                dgvVacation.DefaultCellStyle.Font = new Font("Roboto", 10);
+                dgvVacation.DefaultCellStyle.Font = new System.Drawing.Font("Roboto", 10);
                 dgvVacation.DataSource = DS.Tables[0];
 
                 lblVacationCount.Text = DS.Tables[0].Rows.Count.ToString();
@@ -701,40 +703,40 @@ namespace BGC_HRS
 
         private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void GbStatus_Paint(object sender, PaintEventArgs p)
         {
-            GroupBox box = (GroupBox)sender;
+            System.Windows.Forms.GroupBox box = (System.Windows.Forms.GroupBox)sender;
             p.Graphics.Clear(Color.White);
             p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
         }
 
         private void GbGender_Paint(object sender, PaintEventArgs p)
         {
-            GroupBox box = (GroupBox)sender;
+            System.Windows.Forms.GroupBox box = (System.Windows.Forms.GroupBox)sender;
             p.Graphics.Clear(Color.White);
             p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
         }
 
         private void GroupBox1_Paint(object sender, PaintEventArgs p)
         {
-            GroupBox box = (GroupBox)sender;
+            System.Windows.Forms.GroupBox box = (System.Windows.Forms.GroupBox)sender;
             p.Graphics.Clear(Color.White);
             p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
         }
 
         private void GroupBox2_Paint(object sender, PaintEventArgs p)
         {
-            GroupBox box = (GroupBox)sender;
+            System.Windows.Forms.GroupBox box = (System.Windows.Forms.GroupBox)sender;
             p.Graphics.Clear(Color.White);
             p.Graphics.DrawString(box.Text, box.Font, Brushes.Black, 0, 0);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void DgvEmployeeList_DoubleClick(object sender, EventArgs e)
@@ -896,6 +898,88 @@ namespace BGC_HRS
         private void BtnPassportSearch_Click(object sender, EventArgs e)
         {
             LoadPassportMonitoringList();
+        }
+
+        private void copyAlltoClipboard()
+        {
+            dgvEmployeeList.SelectAll();
+            DataObject dataObj = dgvEmployeeList.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private void ExportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "Inventory_Adjustment_Export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                // Copy DataGridView results to clipboard
+                copyAlltoClipboard();
+
+                object misValue = System.Reflection.Missing.Value;
+                Excel.Application xlexcel = new Excel.Application();
+
+                xlexcel.DisplayAlerts = false; // Without this you will get two confirm overwrite prompts
+                Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+                // Format column D as text before pasting results, this was required for my data
+                Excel.Range rng = xlWorkSheet.get_Range("D:D").Cells;
+                rng.NumberFormat = "@";
+
+                // Paste clipboard results to worksheet range
+                Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[2, 1];
+                CR.Select();
+                xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+                // For some reason column A is always blank in the worksheet. ¯\_(ツ)_/¯
+                // Delete blank column A and select cell A1
+                Excel.Range delRng = xlWorkSheet.get_Range("A:A").Cells;
+                delRng.Delete(Type.Missing);
+                xlWorkSheet.get_Range("A2").Select();
+
+                // Add Header
+                xlWorkSheet.Rows.Cells[1, 1].Value = "ID";
+                xlWorkSheet.Rows.Cells[1, 2].Value = "Employee Code";
+
+                // Save the excel file under the captured location from the SaveFileDialog
+                xlWorkBook.SaveAs(sfd.FileName, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlexcel.DisplayAlerts = true;
+                xlWorkBook.Close(true, misValue, misValue);
+                xlexcel.Quit();
+
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlexcel);
+
+                // Clear Clipboard and DataGridView selection
+                Clipboard.Clear();
+                dgvEmployeeList.ClearSelection();
+
+                // Open the newly saved excel file
+                if (File.Exists(sfd.FileName))
+                    System.Diagnostics.Process.Start(sfd.FileName);
+            }
         }
     }
 }
